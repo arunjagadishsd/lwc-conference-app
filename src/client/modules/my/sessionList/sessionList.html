@@ -1,5 +1,6 @@
 <template>
     <div class="list">
+        <input type="search" placeholder="Search sessions..." oninput={handleSearchKeyInput} />
         <template for:each={sessions} for:item="session" for:index="index">
             <a key={session.id} class="session">
                 <div>
@@ -9,7 +10,12 @@
                 </div>
                 <div class="speaker-pictures">
                     <template for:each={session.speakers} for:item="speaker">
-                        <img key={speaker.id} src={speaker.pictureUrl} alt={speaker.name} title={speaker.name}>
+                        <img
+                            key={speaker.id}
+                            src={speaker.pictureUrl}
+                            alt={speaker.name}
+                            title={speaker.name}
+                        />
                     </template>
                 </div>
             </a>
