@@ -9,13 +9,13 @@ export default class SessionList extends LightningElement {
     }
     handleSearchKeyInput(event) {
         const searchKey = event.target.value.toLowerCase();
-        this.sessions = this.allSessions.filter(
-            session => session.name.toLowerCase().includes(searchKey)
+        this.sessions = this.allSessions.filter(session =>
+            session.name.toLowerCase().includes(searchKey)
         );
     }
     handleSessionClick(event) {
         console.log('arun');
-        
+
         const index = event.currentTarget.dataset.index;
         const navigateEvent = new CustomEvent('navigate', {
             detail: this.sessions[index].id
